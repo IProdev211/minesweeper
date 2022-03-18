@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <Box display='flex' flexDirection='column'>
       <Typography variant='h4' textAlign='center'>
-        MINESWEEPER
+        💣 MINESWEEPER
       </Typography>
       <S.HeaderContainer display='flex' justifyContent='space-between'>
         <Box>

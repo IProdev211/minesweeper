@@ -15,7 +15,7 @@ const Cell = ({ key, text, onClick }: CellProps) => {
     }
 
     if (status === 'failed') {
-      return null;
+      return '💣';
     }
 
     return null;
