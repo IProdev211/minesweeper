@@ -1,34 +1,54 @@
-import React from 'react';
-import FlagIcon from '@mui/icons-material/Flag';
+import React, { MouseEvent } from 'react';
 
 import { CellProps, TStatus } from './interface';
 import * as S from './cell.styles';
 
-const Cell = ({ key, text, onClick }: CellProps) => {
+const Cell = ({
+  key,
+  text,
+  disabled,
+  isFlag,
+  onClick,
+  onSetFlag,
+}: CellProps) => {
   const status: TStatus =
     text === '□' ? 'default' : text === '*' ? 'failed' : 'success';
-  console.log(status);
 
-  const renderBtnText = (status: TStatus, text: string) => {
+  const renderBtnText = () => {
     if (status === 'success') {
       return text === '0' ? null : <span>{text}</span>;
     }
-
     if (status === 'failed') {
       return '💣';
     }
-
+    if (isFlag) {
+      return '🚩';
+    }
     return null;
+  };
+
+  const handleClickCell = () => {
+    if (disabled) return;
+
+    onClick();
+  };
+
+  const handleContextMenu = (e: MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+
+    onSetFlag();
   };
 
   return (
     <S.Cell
       key={key}
-      onClick={() => onClick()}
+      onClick={handleClickCell}
       data-testid={key}
       status={status}
+      disabled={disabled}
+      onContextMenu={handleContextMenu}
     >
-      {renderBtnText(status, text)}
+      {renderBtnText()}
     </S.Cell>
   );
 };

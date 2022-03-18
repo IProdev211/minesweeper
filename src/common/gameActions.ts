@@ -35,7 +35,6 @@ export function* watchOnGame(): any {
   while (true) {
     try {
       const data = yield take(socketChannel);
-      console.log('data... ', data);
       if (data.includes('map:')) {
         yield put(setBoardMap(data));
       }
@@ -43,6 +42,7 @@ export function* watchOnGame(): any {
         yield fork(requestBoardMap, socket);
       }
       if (data.includes('open:')) {
+        console.log(data);
         yield put(setStatus(data.split('open: ')[1]));
         yield fork(requestBoardMap, socket);
       }

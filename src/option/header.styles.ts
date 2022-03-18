@@ -9,14 +9,16 @@ export const HeaderContainer = styled(Box)({
   margin: '8px 0',
 });
 
-export const LevelButton = styled(Button)({
-  backgroundColor: 'transparent',
-  textTransform: 'none',
+export const LevelButton = styled(Button)(
+  ({ isActive }: { isActive: boolean }) => ({
+    backgroundColor: isActive ? '#6a7173' : 'transparent',
+    textTransform: 'none',
 
-  '&:hover': {
-    backgroundColor: '#6a7173',
-  },
-});
+    '&:hover': {
+      backgroundColor: '#6a7173',
+    },
+  })
+);
 
 export const RefreshButton = styled(Button)({
   color: '#fff',

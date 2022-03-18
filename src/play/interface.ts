@@ -1,17 +1,16 @@
 export type TStatus = 'success' | 'failed' | 'default';
 
-export interface BoardProps {
-  boardMap: string[];
-}
-
 export interface CellProps {
   key: string;
   text: string;
+  disabled: boolean;
+  isFlag: boolean;
   onClick: () => void;
+  onSetFlag: () => void;
 }
 
 export interface PlayState {
-  level: number;
+  flags: Array<Array<number>>;
 }
 
 export interface ActionType {

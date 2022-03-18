@@ -15,19 +15,26 @@ const gameSlice = createSlice({
   name: 'game',
   initialState,
   reducers: {
-    initialiazeGame() {
-      return;
-    },
+    initialiazeGame() {},
     setBoardMap(state: GameState, action: ActionType) {
       state.boardMap = convertMapPayload(action.payload as string);
     },
+    refreshGame(state: GameState) {
+      state.status = -1;
+    },
     setStatus(state: GameState, action: ActionType) {
       const status = action.payload as string;
-      state.status = status === '' ? -1 : status === 'OK' ? 1 : 0;
+      state.status =
+        status === '' || status === 'OK' ? -1 : status === 'You lose' ? 0 : 1;
     },
   },
 });
 
-export const { initialiazeGame, setBoardMap, setStatus } = gameSlice.actions;
+export const {
+  initialiazeGame,
+  setBoardMap,
+  setStatus,
+  refreshGame,
+} = gameSlice.actions;
 
 export const gameReducer = gameSlice.reducer;
