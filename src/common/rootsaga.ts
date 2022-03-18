@@ -1,6 +1,8 @@
 import { takeLatest } from 'redux-saga/effects';
-import { watchOnGame, handleCreateGame } from '../game/gameActions';
-import { startGame, initialiazeGame } from '../game/gameReducers';
+import { watchOnGame } from './gameActions';
+import { initialiazeGame } from './gameReducers';
+import { handleCreateGame } from '../option/optionActions';
+import { startGame } from '../option/optionReducers';
 
 export function* watcherSaga() {
   yield takeLatest(initialiazeGame.type, watchOnGame);

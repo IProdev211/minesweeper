@@ -10,12 +10,10 @@ export interface CellProps {
   onClick: () => void;
 }
 
-export interface GameState {
+export interface PlayState {
   level: number;
-  boardMap: string[];
-  status: number; // 0: lose, 1: win, -1: default
 }
 
 export interface ActionType {
-  payload: string | number;
+  payload: Record<string, number>;
 }

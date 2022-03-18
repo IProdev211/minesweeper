@@ -7,7 +7,6 @@ function convertMapPayload(payload: string): string[] {
 }
 
 const initialState: GameState = {
-  level: 0,
   boardMap: [],
   status: -1,
 };
@@ -16,9 +15,8 @@ const gameSlice = createSlice({
   name: 'game',
   initialState,
   reducers: {
-    initialiazeGame() {},
-    startGame(state: GameState, action: ActionType) {
-      state.level = action.payload as number;
+    initialiazeGame() {
+      return;
     },
     setBoardMap(state: GameState, action: ActionType) {
       state.boardMap = convertMapPayload(action.payload as string);
@@ -30,11 +28,6 @@ const gameSlice = createSlice({
   },
 });
 
-export const {
-  initialiazeGame,
-  setBoardMap,
-  startGame,
-  setStatus,
-} = gameSlice.actions;
+export const { initialiazeGame, setBoardMap, setStatus } = gameSlice.actions;
 
 export const gameReducer = gameSlice.reducer;

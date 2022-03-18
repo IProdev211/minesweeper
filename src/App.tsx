@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Board from './game/board';
-import Header from './common/header';
+import Board from './play/board';
 import * as S from './App.styles';
+import Header from './option/header';
 
 function App() {
   return (

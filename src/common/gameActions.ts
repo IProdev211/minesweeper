@@ -1,6 +1,6 @@
 import { take, put, call, apply, fork } from 'redux-saga/effects';
 import { eventChannel } from 'redux-saga';
-import WebSocketClient from '../common/websocketClient';
+import WebSocketClient from './websocketClient';
 import { setBoardMap, setStatus } from './gameReducers';
 
 function createSocketChannel(socket: WebSocket) {
@@ -10,7 +10,7 @@ function createSocketChannel(socket: WebSocket) {
     };
 
     const errorHandler = (errorEvent: any) => {
-      emit(new Error(errorEvent.reason || 'UKNOWN'));
+      emit(new Error(errorEvent.reason || 'Unkown Error'));
     };
 
     socket.addEventListener('message', handleOnMessage);
@@ -26,12 +26,6 @@ function createSocketChannel(socket: WebSocket) {
 
 function* requestBoardMap(socket: WebSocket) {
   yield apply(socket, socket.send, ['map']);
-}
-
-export function* handleCreateGame(action: any) {
-  yield apply(WebSocketClient.socket, WebSocketClient.socket.send, [
-    action.payload,
-  ]);
 }
 
 export function* watchOnGame(): any {
