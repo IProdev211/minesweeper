@@ -4,7 +4,7 @@ import { CellProps, TStatus } from './interface';
 import * as S from './cell.styles';
 
 const Cell = ({
-  key,
+  testId,
   text,
   disabled,
   isFlag,
@@ -41,9 +41,8 @@ const Cell = ({
 
   return (
     <S.Cell
-      key={key}
+      data-testid={testId}
       onClick={handleClickCell}
-      data-testid={key}
       status={status}
       disabled={disabled}
       onContextMenu={handleContextMenu}

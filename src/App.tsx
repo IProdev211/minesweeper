@@ -15,7 +15,9 @@ function App() {
     <S.AppContainer>
       <Header />
       <S.BoardContainer>
-        <S.Message status={status}>{message}</S.Message>
+        <S.Message status={status} data-testid='game-status'>
+          {message}
+        </S.Message>
         <Board />
       </S.BoardContainer>
     </S.AppContainer>

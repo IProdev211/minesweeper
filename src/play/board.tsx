@@ -29,12 +29,13 @@ const Board = () => {
         );
         return (
           <Cell
-            key={`cell-${_rowIndex}-${_colIndex}`}
+            testId={`cell-${_rowIndex}-${_colIndex}`}
             text={cell}
             disabled={status !== -1}
             isFlag={!!isFlag}
             onClick={() => handleClickCell(_rowIndex, _colIndex)}
             onSetFlag={() => handleSetFlag(_rowIndex, _colIndex)}
+            key={`cell-${_rowIndex}-${_colIndex}`}
           />
         );
       });
@@ -54,7 +55,7 @@ const Board = () => {
     );
   }
 
-  return <>{renderBoardMap(boardMap)}</>;
+  return <Box data-testid='board'>{renderBoardMap(boardMap)}</Box>;
 };
 
 export default Board;

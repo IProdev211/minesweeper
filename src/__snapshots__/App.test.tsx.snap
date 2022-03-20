@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> rendered 1`] = `
+<div
+  class="MuiBox-root css-1p6th2l"
+>
+  <div
+    class="MuiBox-root css-j7qwjs"
+  >
+    <h4
+      class="MuiTypography-root MuiTypography-h4 css-149xwtl-MuiTypography-root"
+    >
+      💣 MINESWEEPER
+    </h4>
+    <div
+      class="MuiBox-root css-1e9h9dq"
+    >
+      <div
+        class="MuiBox-root css-0"
+      >
+        <button
+          class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1dekchp-MuiButtonBase-root-MuiButton-root"
+          data-testid="level-beginner"
+          tabindex="0"
+          type="button"
+        >
+          Beginner
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1dekchp-MuiButtonBase-root-MuiButton-root"
+          data-testid="level-intermediate"
+          tabindex="0"
+          type="button"
+        >
+          Intermediate
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1dekchp-MuiButtonBase-root-MuiButton-root"
+          data-testid="level-expert"
+          tabindex="0"
+          type="button"
+        >
+          Expert
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <button
+        class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root css-o2ixo2-MuiButtonBase-root-MuiButton-root"
+        data-testid="restart"
+        tabindex="0"
+        type="button"
+      >
+        Restart
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    class="MuiBox-root css-yaxopm"
+  >
+    <div
+      class="MuiBox-root css-1nygcii"
+      data-testid="game-status"
+    />
+    <h5
+      class="MuiTypography-root MuiTypography-h5 css-xr009-MuiTypography-root"
+    >
+      Select the level...
+    </h5>
+  </div>
+</div>
+`;

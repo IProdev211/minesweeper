@@ -1,7 +1,7 @@
 export type TStatus = 'success' | 'failed' | 'default';
 
 export interface CellProps {
-  key: string;
+  testId: string;
   text: string;
   disabled: boolean;
   isFlag: boolean;

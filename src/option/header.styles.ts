@@ -10,8 +10,8 @@ export const HeaderContainer = styled(Box)({
 });
 
 export const LevelButton = styled(Button)(
-  ({ isActive }: { isActive: boolean }) => ({
-    backgroundColor: isActive ? '#6a7173' : 'transparent',
+  ({ selected }: { selected: boolean }) => ({
+    backgroundColor: selected ? '#6a7173' : 'transparent',
     textTransform: 'none',
 
     '&:hover': {

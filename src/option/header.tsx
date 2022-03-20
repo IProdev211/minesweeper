@@ -37,27 +37,34 @@ const Header = () => {
         <Box>
           <S.LevelButton
             variant='contained'
-            isActive={optionState.level === 1}
+            data-testid='level-beginner'
+            selected={optionState.level === 1}
             onClick={() => handleLevel(1)}
           >
             Beginner
           </S.LevelButton>
           <S.LevelButton
             variant='contained'
-            isActive={optionState.level === 2}
+            data-testid='level-intermediate'
+            selected={optionState.level === 2}
             onClick={() => handleLevel(2)}
           >
             Intermediate
           </S.LevelButton>
           <S.LevelButton
             variant='contained'
-            isActive={optionState.level === 3}
+            data-testid='level-expert'
+            selected={optionState.level === 3}
             onClick={() => handleLevel(3)}
           >
             Expert
           </S.LevelButton>
         </Box>
-        <S.RefreshButton variant='outlined' onClick={() => handleRefresh()}>
+        <S.RefreshButton
+          variant='outlined'
+          data-testid='restart'
+          onClick={() => handleRefresh()}
+        >
           Restart
         </S.RefreshButton>
       </S.HeaderContainer>
