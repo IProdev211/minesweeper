@@ -9,6 +9,7 @@ const placeSlice = createSlice({
   name: 'game',
   initialState,
   reducers: {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     openCell(state: PlayState, action: ActionType) {
       return;
     },
